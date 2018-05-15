@@ -1,13 +1,17 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const morgan = require('morgan');
+import express from 'express';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
+
+import routes from './routes';
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.encoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('dev'));
+
+app.use('/', routes);
 
 app.listen(process.env.SERVER_PORT, err => {
     if(!err) {
