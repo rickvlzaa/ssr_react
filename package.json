@@ -7,7 +7,8 @@
     "watch:server": "webpack --env.host=server --env.mode=dev --watch",
     "build:server": "webpack --env.host=server --env.mode=prod",
     "build:client": "webpack --env.host=client --env.mode=prod",
-    "start:dev": "nodemon index.js"
+    "start:devserver": "nodemon index.js",
+    "start:devclient": "node ./src/client/dev/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "css-loader": "^0.28.11",
     "dotenv-webpack": "^1.5.5",
     "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
     "isomorphic-style-loader": "^4.0.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
@@ -52,10 +54,9 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "knex": "^0.14.6",
     "morgan": "^1.9.0",
-    "mysql": "^2.15.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",

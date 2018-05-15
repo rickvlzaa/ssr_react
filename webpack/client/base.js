@@ -1,8 +1,7 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-    context: path.resolve(__dirname, '../../'),
+    context: path.resolve(__dirname, '../..'),
     entry: {
         app: ['./src/client/index.js']
     },
@@ -45,10 +44,15 @@ module.exports = {
                         loader: 'sass-loader'
                     }
                 ]
+            },
+            {
+                test: /\.(png|gif|jpe?g|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
             }
         ]
-    },
-    plugins: [
-       new Dotenv()
-    ]
+    }
 }

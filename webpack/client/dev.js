@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./base');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge.strategy({'entry.app': 'prepend'})(base, {
     entry: {
@@ -13,6 +14,9 @@ module.exports = merge.strategy({'entry.app': 'prepend'})(base, {
     },
     mode: 'development',
     plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/client/dev/server/index.html'
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
     ]

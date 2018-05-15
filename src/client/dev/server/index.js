@@ -1,9 +1,11 @@
-const express = require('exporess');
+const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('../../../../webpack.config')('client', 'dev');
+const config = require('../../../../webpack.config')({host: 'client', mode: 'dev'});
 const compiler = webpack(config);
+
+require('dotenv').config()
 
 const app = express();
 

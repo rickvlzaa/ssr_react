@@ -3,9 +3,10 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import cors from 'cors';
-
 import routes from './routes';
 import APIroutes from '../api/routes';
+
+require('dotenv').config();
 
 const app = express();
 
