@@ -1,14 +1,11 @@
 import { combineReducers } from 'redux';
-
-function mainReducer(state = {}, action) {
+import { reducer as formReducer } from 'redux-form';
+function appReducer(state = {}, action) {
     return state;
 }
 
-function subReducer(state = {}, action) {
-    return state;
-}
 
 export default combineReducers({
-    main: mainReducer,
-    sub: subReducer
+    app: appReducer,
+    form: formReducer
 });

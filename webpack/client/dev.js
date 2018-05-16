@@ -4,9 +4,9 @@ const base = require('./base');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = merge.strategy({'entry.app': 'prepend'})(base, {
+module.exports = merge(base, {
     entry: {
-        app: ['webpack-hot-middleware/client']
+        app: ['webpack-hot-middleware/client', './src/client/dev/index.js'],
     },
     output: {
         filename: '[name].bundle.js',
